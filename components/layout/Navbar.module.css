@@ -1,0 +1,45 @@
+/* Navbar.module.css
+   ─────────────────────────────────────────────────────────────
+   Styles for the fixed top navigation bar.
+   Reference globals.css tokens via var(--token-name).
+
+   ELEMENTS TO STYLE:
+     .navbar          the <nav> wrapper — fixed bar across full width
+     .logo            left-side logo group (icon + text + badge)
+     .logoBadge       the "LEARN" pink pill next to "CAVE"
+     .links           the group of nav link <a> elements
+     .link            a single nav link
+     .linkActive      the link matching the current page route
+   ───────────────────────────────────────────────────────────── */
+
+.navbar {
+  /* TODO */
+}
+
+.logo {
+  /* TODO */
+}
+
+.logoBadge {
+  /* TODO
+     Hint: background-color: var(--color-brand-pink);
+           color: #fff;
+           border-radius: var(--radius-pill);
+           font-family: var(--font-mono);
+  */
+}
+
+.links {
+  /* TODO */
+}
+
+.link {
+  /* TODO */
+}
+
+.linkActive {
+  /* TODO
+     Hint: this is the same style as .btn--primary in globals.css
+           (dark background, light text, pill radius)
+  */
+}

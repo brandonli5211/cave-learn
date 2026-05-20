@@ -1,0 +1,54 @@
+/* HeroSection.module.css
+   ─────────────────────────────────────────────────────────────
+   ELEMENTS TO STYLE:
+     .section       the outer wrapper — controls max-width and padding
+     .eyebrow       the uppercase micro label at the top
+     .logoRow       flex row containing the logo mark + headline
+     .logoMark      the CAVE circular logo image/placeholder
+     .headline      the <h1> element
+     .headlineAccent the "Clean Architecture" span inside h1 — pink color
+     .subtitle      the paragraph below the headline
+     .statsRow      horizontal flex row of stat chips
+     .statChip      a single chip (dot + label)
+     .statDot       the small colored circle in each chip
+   ───────────────────────────────────────────────────────────── */
+
+.section {
+  /* TODO */
+}
+
+.eyebrow {
+  /* TODO - hint: use var(--font-mono) and var(--tracking-eyebrow) */
+}
+
+.logoRow {
+  /* TODO - hint: display flex, align-items flex-start, gap */
+}
+
+.logoMark {
+  /* TODO - 56px circle, placeholder background until SVG is ready */
+}
+
+.headline {
+  /* TODO - hint: use var(--font-display) and var(--text-display) */
+}
+
+.headlineAccent {
+  /* TODO - hint: color: var(--color-brand-pink) */
+}
+
+.subtitle {
+  /* TODO */
+}
+
+.statsRow {
+  /* TODO - hint: display flex, flex-wrap wrap, gap */
+}
+
+.statChip {
+  /* TODO - hint: display flex, align-items center, gap, small font */
+}
+
+.statDot {
+  /* TODO - hint: 8px circle, background-color set inline in JSX */
+}

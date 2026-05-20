@@ -1,0 +1,45 @@
+/* StepCard.module.css
+   ─────────────────────────────────────────────────────────────
+   ELEMENTS TO STYLE:
+     .card            the outer <article> — white surface, border, radius, shadow
+     .illustration    top image/placeholder area — light background, fixed height
+     .body            padding wrapper for the text content below the illustration
+     .stepBadge       the "STEP N" eyebrow label
+     .title           the card headline
+     .description     the body paragraph
+     .cta             the "Start exploring ›" link at the bottom
+   ───────────────────────────────────────────────────────────── */
+
+.card {
+  /* TODO
+     hint: background-color: var(--color-surface);
+           border-radius: var(--radius-card);
+           border: 1px solid var(--color-border);
+           box-shadow: var(--shadow-card);
+           display: flex; flex-direction: column;
+  */
+}
+
+.illustration {
+  /* TODO - placeholder area, e.g. height: 144px, background: var(--color-surface2) */
+}
+
+.body {
+  /* TODO - padding around the text content */
+}
+
+.stepBadge {
+  /* TODO - hint: font-family: var(--font-mono), color: var(--color-brand-blue) */
+}
+
+.title {
+  /* TODO */
+}
+
+.description {
+  /* TODO */
+}
+
+.cta {
+  /* TODO - hint: color: var(--color-brand-pink), no text-decoration, hover opacity */
+}
