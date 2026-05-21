@@ -28,18 +28,6 @@ npm install
 npm run dev
 ```
 
-**If you are setting up the remote from scratch (first person only):**
-
-```bash
-cd ~/cave-learn
-git init
-git add .
-git commit -m "Initial scaffold"
-git branch -M main        # renames your local branch to main
-git remote add origin https://github.com/CA-Visualizer-for-Education/cave-learn.git
-git push -u origin main
-```
-
 ## Getting started
 
 ```bash
