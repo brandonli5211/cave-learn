@@ -26,13 +26,13 @@ export const TypeBadge = ({ type }: { type: string }) => {
         throw new Error(`TypeBadge: unknown type: "${type}"`);
     }
     const activityType = type.toUpperCase() as ActivityType;
-    
+
     return (
-        <div 
+        <div
             style={{ backgroundColor: activityTypeBackground[activityType] }}
             className={styles.typeBadge}
         >
-            <p 
+            <p
                 style={{ color: activityTypeColor[activityType]}}
                 className="text-eyebrow"
             >

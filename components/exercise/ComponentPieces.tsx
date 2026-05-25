@@ -1,8 +1,11 @@
+'use client'
 // components/exercise/ComponentPieces.tsx
 // Right-hand panel showing the draggable CA component chips to be placed on the board.
 import { CA_LAYERS, type LayerId } from "@/lib/ca-data";
 import styles from './style.module.css';
+import { useDraggable } from "@dnd-kit/react"
 
+/* id is just the index in the list of CA types which will be unique */
 interface ComponentPiecesProps {
   label: string;
   layer: string;
@@ -34,9 +37,12 @@ const layerToBadge : Record<LayerId, string> = {
 }
 
 export default function ComponentPieces({ label, layer } : ComponentPiecesProps) {
+  const {ref} = useDraggable({ id: label })
+
   return (
-  <button className={`${layerToBadge[layer as LayerId]} ${styles['exercise--button']}`} type="button">
-    <p className={styles['button--main-label']}>{capitalizeWords(label)}</p>
-    {getSubLabel(label) != "" && <p className={styles['button--sub-label']}>{getSubLabel(label)}</p>}
-  </button>
-)}
+    <button className={`${layerToBadge[layer as LayerId]} ${styles['exercise--button']}`} type="button" ref={ref}>
+      <p className={styles['button--main-label']}>{capitalizeWords(label)}</p>
+      {getSubLabel(label) != "" && <p className={styles['button--sub-label']}>{getSubLabel(label)}</p>}
+    </button>
+  )
+}
