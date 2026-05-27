@@ -1,8 +1,7 @@
 .exercise--button {
     border-radius: var(--radius-sm);
     height: 36px;
-    width: 235px;
-    max-width: 100%;
+    width: 100%;
     display: flex;
     margin-bottom: 8px;
     border: none;
@@ -10,7 +9,7 @@
 
 
 .button--main-label {
-    text-align: left;
+    text-align: center;
     flex-grow: 1;
     font-size: clamp(.25rem, .75vw, .7rem);
     pointer-events: none;
@@ -55,7 +54,7 @@
 
 
 .subheader--container {
-    width: 100vw;
+    width: 100%;
     height: 77px;
     align-items: center;
     padding-top: 10px;
@@ -63,7 +62,6 @@
     padding-left: 20px;
     padding-right: 20px;
     display: flex;
-    background-color: white;
     border-top: 1px solid var(--color-border);
     border-left: 1px solid var(--color-border);
     border-right: 1px solid var(--color-border);
@@ -91,20 +89,23 @@
 
 
 .buttons--container {
-    width: 80%;
-    height: 572px;
+    width: 90%;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px 10px;
 }
 
 
 .pieces--container {
-    width: 80%;
+    width: 90%;
     text-align: left;
-    padding-top: 15px;
+    padding-top: calc(77px);
 }
 
 
 .description--container {
-    width: 80%
+    width: 90%;
 }
 
 
@@ -116,12 +117,22 @@
 
 
 .btn--check-work {
-    background-color: var(--color-brand-pink);
+    background-color: var(--color-brand-green);
+    font-size: clamp(.25rem, .75vw, .7rem);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn--reset {
+    font-size: clamp(.25rem, .75vw, .7rem);
 }
 
 
 .sidebar--container {
-    width: 15vw;
+    width: 20vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -135,14 +146,27 @@
     border-left: 1px solid var(--color-border);
     border-right: 1px solid var(--color-border);
     border-top: 0.5px solid var(--color-border);
-    padding: var(--space-1);
     background-color: white;
-    gap: 10px 0px;
+    gap: 20px 0px;
 }
 
 .droppable {
     background-color: red;
     height: 36px;
-    width: 100%; 
+    width: 25%; 
     margin-bottom: 20px;
+}
+
+.check-work-reset--container {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 0px 10px;
+}
+
+.button--column {
+    flex: 1;
 }

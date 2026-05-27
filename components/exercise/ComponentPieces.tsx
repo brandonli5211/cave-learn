@@ -41,8 +41,8 @@ export default function ComponentPieces({ label, layer } : ComponentPiecesProps)
 
   return (
     <button className={`${layerToBadge[layer as LayerId]} ${styles['exercise--button']}`} type="button" ref={ref}>
+      {/*{getSubLabel(label) != "" && <p className={styles['button--sub-label']}>{getSubLabel(label)}</p>} */}
       <p className={styles['button--main-label']}>{capitalizeWords(label)}</p>
-      {getSubLabel(label) != "" && <p className={styles['button--sub-label']}>{getSubLabel(label)}</p>}
     </button>
   )
 }

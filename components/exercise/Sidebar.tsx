@@ -9,8 +9,6 @@ interface SidebarProps {
     isPlaced: Record<string, string>;
 }
 
-/* buttons container is 572px to fit all of the buttons. Change if the height of buttons change later.*/
-
 export default function Sidebar({ isPlaced } : SidebarProps){
     const {ref} = useDroppable({id : "sidebar-droppable"})
     return (
@@ -22,7 +20,16 @@ export default function Sidebar({ isPlaced } : SidebarProps){
             <p>Drag each chip into the slot you think it belongs in. Drop chips back here to remove.</p>
         </div>
         <div className={styles['buttons--container']} ref={ref}>
-            {CA_COMPONENTS.map((component) => (isPlaced[component.id] == "" && <ComponentPieces key={component.id} layer={component.layer} label={component.id}/>))}
+            <div className={styles['button--column']}>
+                {CA_COMPONENTS.filter((component) => (isPlaced[component.id] == "")).map((component, index) => (index % 2 == 0 && <ComponentPieces key={component.id} layer={component.layer} label={component.id}/>))}
+            </div>
+            <div className={styles['button--column']}>
+                {CA_COMPONENTS.filter((component) => (isPlaced[component.id] == "")).map((component, index) => (index % 2 == 1 && <ComponentPieces key={component.id} layer={component.layer} label={component.id}/>))}
+            </div>
+        </div>
+        <div className={styles['check-work-reset--container']}>
+            <button className={`btn btn--primary btn--check-work ${styles['btn--check-work']}`}>Check My Work</button>
+            <button className={`btn btn--secondary ${styles['btn--reset']}`}>Reset</button>
         </div>
     </aside>
 )}
