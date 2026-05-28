@@ -9,6 +9,7 @@ import { useDraggable } from "@dnd-kit/react"
 interface ComponentPiecesProps {
   label: string;
   layer: string;
+  inDroppable: boolean;
 }
 
 const capitalizeWords = (words : string) : string => {
@@ -36,13 +37,15 @@ const layerToBadge : Record<LayerId, string> = {
   'frameworks-drivers' : "badge badge--blue"
 }
 
-export default function ComponentPieces({ label, layer } : ComponentPiecesProps) {
+export default function ComponentPieces({ label, layer, inDroppable } : ComponentPiecesProps) {
   const {ref} = useDraggable({ id: label })
 
   return (
-    <button className={`${layerToBadge[layer as LayerId]} ${styles['exercise--button']}`} type="button" ref={ref}>
-      {/*{getSubLabel(label) != "" && <p className={styles['button--sub-label']}>{getSubLabel(label)}</p>} */}
-      <p className={styles['button--main-label']}>{capitalizeWords(label)}</p>
+    <button type="button" className={inDroppable ? `${styles['individual-button--container']} ${styles['button--in-droppable']}` : styles['individual-button--container']} ref={ref}>
+      {getSubLabel(label) != "" ? <div className={styles['button--sublabel']}>{getSubLabel(label)}</div> : <div className={styles['button--no-sublabel']}></div>}
+      <div className={`${layerToBadge[layer as LayerId]} ${styles['exercise--button']} ${styles['button--main-label']}`}>
+        {capitalizeWords(label)}
+      </div>
     </button>
   )
 }

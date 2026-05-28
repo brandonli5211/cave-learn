@@ -15,7 +15,7 @@ export default function ComponentPiecesContainer({ buttonLabel, buttonLayer, dro
     const { ref, isDropTarget } = useDroppable({ id : droppableID })
     return (
         <div className={styles['droppable']} ref={ref}>
-            {buttonLabel != "" && <ComponentPieces key={buttonLabel} layer={buttonLayer} label={buttonLabel}/>}
+            {buttonLabel != "" && <ComponentPieces key={buttonLabel} layer={buttonLayer} label={buttonLabel} inDroppable={true}/>}
         </div>
     )
 }

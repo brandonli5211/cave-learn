@@ -19,12 +19,16 @@ DONE AND TESTED
 
 
 Hook up the button so clicking them actually does something and start working on results page -- Thursday - Friday.
+  When all components are inserted, you will have the option to check your work. 
+    You shouldn't have the option before all buttons are inserted (disable button).
+    You can just filter to figure out if all components are in and pass that as a prop to the sidebar.
   When you validate your score, the sidebar should change to show your score in a circle (check figma).
   When you validate your score, all correct components should have a green outline and all incorrect components should have a red outline. If no validation is done, there should be no outline.
     Just create a separate class and based on the prop passed in, concatenate the appropriate class. Each class has different outline (or none).
       Use "?" operator and if isPlaced[component.id] is "", pass in null. Otherwise, check correctness.
   There will be the option to retry (should be the same as reset).
-  Might have to place the entire page into drag drop provider. -- WILL TEST WHEN SCORE IS IMPLEMENTED
+
+  Might have to place the entire page into drag drop provider. -- DONE - WILL TEST WHEN SCORE IS IMPLEMENTED
     Make sure all buttons still work.
     Subheader is no longer above the sidebar -- should move to same container as exercise board.
 */
@@ -33,6 +37,7 @@ export default function ExercisePage() {
   const [isPlaced, setIsPlaced] = useState(Object.fromEntries(CA_COMPONENTS.map((component, _) => [component.id, ""])));
   const [isFilled, setIsFilled] = useState(Object.fromEntries(CA_COMPONENTS.map((component, _) => [component.id, ""])));
   const [score, setScore] = useState(0);
+  const [isVerified, setIsVerified] = useState(false);
 
   function resetBoard(){
     setIsPlaced(Object.fromEntries(CA_COMPONENTS.map((component, _) => [component.id, ""])))
@@ -47,7 +52,6 @@ export default function ExercisePage() {
   }
 
   return <main className="page-shell">
-    {/* the header will be 56px and the subheader will be 77px */}
     <Box sx={{ display: 'flex', flex: 1, overflow: 'hidden', height: 'calc(100vh - 56px)'}}>
       <DragDropProvider
         onDragEnd={(event: any) => {

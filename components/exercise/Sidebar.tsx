@@ -21,10 +21,10 @@ export default function Sidebar({ isPlaced } : SidebarProps){
         </div>
         <div className={styles['buttons--container']} ref={ref}>
             <div className={styles['button--column']}>
-                {CA_COMPONENTS.filter((component) => (isPlaced[component.id] == "")).map((component, index) => (index % 2 == 0 && <ComponentPieces key={component.id} layer={component.layer} label={component.id}/>))}
+                {CA_COMPONENTS.filter((component) => (isPlaced[component.id] == "")).map((component, index) => (index % 2 == 0 && <ComponentPieces key={component.id} layer={component.layer} label={component.id} inDroppable={false}/>))}
             </div>
             <div className={styles['button--column']}>
-                {CA_COMPONENTS.filter((component) => (isPlaced[component.id] == "")).map((component, index) => (index % 2 == 1 && <ComponentPieces key={component.id} layer={component.layer} label={component.id}/>))}
+                {CA_COMPONENTS.filter((component) => (isPlaced[component.id] == "")).map((component, index) => (index % 2 == 1 && <ComponentPieces key={component.id} layer={component.layer} label={component.id} inDroppable={false}/>))}
             </div>
         </div>
         <div className={styles['check-work-reset--container']}>
