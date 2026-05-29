@@ -49,11 +49,10 @@
     padding: 10px;
 }
 
-.circle {
+.results--circle {
     width: 10px;
     height: 10px;
-    margin-right: 10px;
-    background-color: var(--color-text-mute);
+    background-color: var(--color-brand-green);
     border-radius: 50%;
 }
 
@@ -107,6 +106,26 @@
     gap: 0px 10px;
 }
 
+.sidebar--incorrect-components {
+    width: 90%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px 10px;
+}
+
+.results-text {
+    color: var(--color-brand-green);
+    text-align: left;
+}
+
+.sidebar--results-text {
+    width: 90%;
+    text-align: left;
+    margin-top: 40px;
+    display: flex;
+    gap: 5px;
+}
 
 .pieces--container {
     width: 90%;
@@ -141,6 +160,87 @@
     font-size: clamp(.25rem, .75vw, .7rem);
 }
 
+.sidebar--verified--container {
+    width: 20vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 180ms ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 1.5px;
+    border-bottom: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+    border-top: 0.5px solid var(--color-border);
+    background-color: white;
+}
+
+.sidebar--circle--container {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar--circle-ring {
+    transform: rotate(-90deg); /* Rotate so it starts at the top */
+}
+
+.score-text {
+    color: black;
+    font-weight: bold;
+}
+
+.score-description--container {
+    position: absolute;
+    font-size: 2.5vw;
+    margin-top: 0.25vw;
+    text-align: center;
+    line-height: 0.5;
+}
+
+.sidebar--incorrect-components-title {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.incorrect-components--header {
+    font-size: 0.9rem;
+}
+
+.score-description-good {
+    margin-top: 0.9vw;
+    font-size: 1vw;
+    color: var(--color-brand-green);
+}
+
+.max-score-text {
+    color: var(--color-text-faint);
+    font-weight: bold;
+}
+
+.retry-button {
+    width: 90%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.button--correct {
+    border: 2px solid lime;
+}
+
+.button--incorrect {
+    border: 2px solid red;
+}
 
 .sidebar--container {
     width: 20vw;

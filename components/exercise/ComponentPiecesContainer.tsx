@@ -7,15 +7,17 @@ interface ComponentPiecesProps {
     buttonLabel: string;
     buttonLayer: string;
     droppableID: string;
+    isVerified: boolean;
+    buttonOutline: string;
 }
 
 /* This is used by ExerciseBoard. That file passes in "label" which is the same as the id of the ca component */
 /* The key is just to distinguish it from other components. */
-export default function ComponentPiecesContainer({ buttonLabel, buttonLayer, droppableID } : ComponentPiecesProps){
-    const { ref, isDropTarget } = useDroppable({ id : droppableID })
+export default function ComponentPiecesContainer({ buttonLabel, buttonLayer, droppableID, isVerified, buttonOutline } : ComponentPiecesProps){
+    const { ref } = useDroppable({ id : droppableID })
     return (
         <div className={styles['droppable']} ref={ref}>
-            {buttonLabel != "" && <ComponentPieces key={buttonLabel} layer={buttonLayer} label={buttonLabel} inDroppable={true}/>}
+            {buttonLabel != "" && <ComponentPieces key={buttonLabel} layer={buttonLayer} label={buttonLabel} inDroppable={true} isVerified={isVerified} buttonOutline={buttonOutline}/>}
         </div>
     )
 }

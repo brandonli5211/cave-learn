@@ -10,6 +10,8 @@ interface ComponentPiecesProps {
   label: string;
   layer: string;
   inDroppable: boolean;
+  buttonOutline: string;
+  isVerified: boolean;
 }
 
 const capitalizeWords = (words : string) : string => {
@@ -37,11 +39,21 @@ const layerToBadge : Record<LayerId, string> = {
   'frameworks-drivers' : "badge badge--blue"
 }
 
-export default function ComponentPieces({ label, layer, inDroppable } : ComponentPiecesProps) {
-  const {ref} = useDraggable({ id: label })
-
-  return (
-    <button type="button" className={inDroppable ? `${styles['individual-button--container']} ${styles['button--in-droppable']}` : styles['individual-button--container']} ref={ref}>
+export default function ComponentPieces({ label, layer, inDroppable, buttonOutline, isVerified } : ComponentPiecesProps) {
+  // const {ref} = useDraggable({ id: label }) is removed from here to prevent unnecessary ids from being created if a button is not draggable
+  
+  /* If the button is in droppable, we need to move the entire button up the height equivalent to the height of the sublabel. 
+     If isVerified, we don't care what inDroppable is since it is assumed that only components are in the droppable.
+  */
+  return (isVerified ?
+    <button type="button" className={`${styles['individual-button--container']} ${styles['button--in-droppable']}`}>
+      {getSubLabel(label) != "" ? <div className={styles['button--sublabel']}>{getSubLabel(label)}</div> : <div className={styles['button--no-sublabel']}></div>}
+      <div className={inDroppable ? `${layerToBadge[layer as LayerId]} ${styles['exercise--button']} ${styles['button--main-label']} ${styles[buttonOutline]}` : `${layerToBadge[layer as LayerId]} ${styles['exercise--button']} ${styles['button--main-label']}`}>
+        {capitalizeWords(label)}
+      </div>
+    </button>
+    :
+    <button type="button" className={inDroppable ? `${styles['individual-button--container']} ${styles['button--in-droppable']}` : styles['individual-button--container']} ref={useDraggable({ id: label }).ref}>
       {getSubLabel(label) != "" ? <div className={styles['button--sublabel']}>{getSubLabel(label)}</div> : <div className={styles['button--no-sublabel']}></div>}
       <div className={`${layerToBadge[layer as LayerId]} ${styles['exercise--button']} ${styles['button--main-label']}`}>
         {capitalizeWords(label)}
