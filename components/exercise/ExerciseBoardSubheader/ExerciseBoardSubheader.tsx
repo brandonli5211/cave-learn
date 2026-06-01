@@ -1,6 +1,9 @@
-import styles from './style.module.css';
+// components/exercise/ExerciseBoardSubheader/ExerciseBoardSubheader.tsx
+// The subheader of the exercise page.
+import styles from './ExerciseBoardSubheader.module.css';
 
-export default function Subheader(){
+
+export default function ExerciseBoardSubheader(){
     return (
     <div className={styles['subheader--container']}>
         <div className={styles['subheader--text']}>

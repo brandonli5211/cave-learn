@@ -1,10 +1,20 @@
 'use client';
-import ComponentPieces from "./ComponentPieces"
+// components/exercise/ExerciseBoardSidebar/ExerciseBoardSidebar.tsx
+// The sidebar of the exercise page.
+import ComponentPieces from "../ComponentPieces/ComponentPieces"
 import { CA_COMPONENTS } from "@/lib/ca-data"
-import styles from "./style.module.css"
+import styles from "./ExerciseBoardSidebar.module.css"
 import { useDroppable } from '@dnd-kit/react'
 
-interface SidebarProps {
+/*
+isPlaced: A mapping of draggable button ids to the id of the droppable area they are located in.
+isVerified: Whether or not the current board has been verified (check work has been clicked).
+score: The amount of draggable buttons in the correct droppable areas.
+handleReset: Resets the position of all of the draggable pieces after the board has been verified.
+handleRetry: Reset the position of all of the draggable pieces.
+handleCheckWork: Shows the score and triggers a change in the sidebar.
+*/
+interface ExerciseBoardSidebarProps {
     isPlaced: Record<string, string>;
     isVerified: boolean;
     score: number;
@@ -13,7 +23,7 @@ interface SidebarProps {
     handleCheckWork(): void;
 }
 
-export default function Sidebar({ isPlaced, isVerified, score, handleReset, handleRetry, handleCheckWork } : SidebarProps){
+export default function ExerciseBoardSidebar({ isPlaced, isVerified, score, handleReset, handleRetry, handleCheckWork } : ExerciseBoardSidebarProps){
     // const {ref} = useDroppable({id : "sidebar-droppable"}) was removed to see if it still works directly passing ref.
 
     return (isVerified ? 

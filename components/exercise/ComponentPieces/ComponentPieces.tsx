@@ -1,11 +1,17 @@
 'use client'
-// components/exercise/ComponentPieces.tsx
+// components/exercise/ComponentPieces/ComponentPieces.tsx
 // Right-hand panel showing the draggable CA component chips to be placed on the board.
-import { CA_LAYERS, type LayerId } from "@/lib/ca-data";
-import styles from './style.module.css';
+import { type LayerId } from "@/lib/ca-data";
+import styles from './ComponentPieces.module.css';
 import { useDraggable } from "@dnd-kit/react"
 
-/* id is just the index in the list of CA types which will be unique */
+/*
+label: Represents what component of clean architecture the button represents and is used as its id.
+layer: Represents what layer of clean architecture the button represents.
+inDroppable: Is true if the button is to be placed in a droppable area.
+buttonOutline: Is either "button--correct" if the button is in the right droppable area or "button-incorrect" otherwise.
+isVerified: Whether or not the current board has been verified (check work has been clicked).
+*/
 interface ComponentPiecesProps {
   label: string;
   layer: string;
