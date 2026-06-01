@@ -28,12 +28,13 @@
 
 import HeroSection from '@/components/home/HeroSection'
 import StepCard from '@/components/home/StepCard'
+import styles from './page.module.css'
 
 export default function HomePage() {
   return (
       <main className="page-shell">
           <HeroSection />
-          <section>
+          <section className={`${styles.cardGrid} content-area`}>
               <StepCard />
               <StepCard />
           </section>
