@@ -56,7 +56,7 @@ export default function ExerciseBoardSidebar({ isPlaced, isVerified, score, hand
             </svg>
             <div className={styles["score-description--container"]}>
                 <span className={styles['score-text']}>{score}</span><span className={styles['max-score-text']}>/{CA_COMPONENTS.length}</span>
-                {score/CA_COMPONENTS.length > 0.75 && (score == CA_COMPONENTS.length ? <p className={styles['score-description-good']}>PERFECT</p> : <p className={styles['score-description-good']}>NICE</p>)}
+                {score/CA_COMPONENTS.length > 0.75 ? (score == CA_COMPONENTS.length ? <p className={styles['score-description-good']}>PERFECT</p> : <p className={styles['score-description-good']}>NICE</p>) : <p className={styles['score-description-good']}>&nbsp;</p>}
             </div>
         </div>
         <div className={styles['sidebar--incorrect-components-title']}>
