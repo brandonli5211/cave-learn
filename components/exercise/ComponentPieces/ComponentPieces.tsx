@@ -54,14 +54,14 @@ export default function ComponentPieces({ label, layer, inDroppable, buttonOutli
   return (isVerified ?
     <button type="button" className={`${styles['individual-button--container']} ${styles['button--in-droppable']}`}>
       {getSubLabel(label) != "" ? <div className={styles['button--sublabel']}>{getSubLabel(label)}</div> : <div className={styles['button--no-sublabel']}></div>}
-      <div className={inDroppable ? `${layerToBadge[layer as LayerId]} ${styles['exercise--button']} ${styles['button--main-label']} ${styles[buttonOutline]}` : `${layerToBadge[layer as LayerId]} ${styles['exercise--button']} ${styles['button--main-label']}`}>
+      <div className={inDroppable ? `${layerToBadge[layer as LayerId]} ${styles['exercise--button']} ${styles['button--main-label']} ${styles['exercise--button-in-droppable']} ${styles[buttonOutline]}` : `${layerToBadge[layer as LayerId]} ${styles['exercise--button']} ${styles['button--main-label']}`}>
         {capitalizeWords(label)}
       </div>
     </button>
     :
     <button type="button" className={inDroppable ? `${styles['individual-button--container']} ${styles['button--in-droppable']}` : styles['individual-button--container']} ref={useDraggable({ id: label }).ref}>
       {getSubLabel(label) != "" ? <div className={styles['button--sublabel']}>{getSubLabel(label)}</div> : <div className={styles['button--no-sublabel']}></div>}
-      <div className={`${layerToBadge[layer as LayerId]} ${styles['exercise--button']} ${styles['button--main-label']}`}>
+      <div className={inDroppable ? `${layerToBadge[layer as LayerId]} ${styles['exercise--button']} ${styles['button--main-label']} ${styles['exercise--button-in-droppable']}` : `${layerToBadge[layer as LayerId]} ${styles['exercise--button']} ${styles['button--main-label']}`}>
         {capitalizeWords(label)}
       </div>
     </button>

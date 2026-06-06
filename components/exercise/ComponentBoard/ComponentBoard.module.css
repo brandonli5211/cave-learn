@@ -1,8 +1,71 @@
 .cadiagram {
-    background-color: aqua;
-    height: calc(100% - 100px);
+    height: calc(100% - 80px);
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadiagram-sub-container {
+    width: 98%;
+    height: 98%;
+    border-radius: var(--radius-sm);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.diagram-container {
+    width: 894px;
+    height: 553px;
+    background-image: url('diagram.svg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-sm);
+}
+
+.top-half {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.interface-adapters-container {
+    width: 278px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.application-business-rules-container {
+    width: 170px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.use-case-interactor-container {
+    width: 160px;
+    margin-top: 178px;
+    margin-left: 2px;
+}
+
+.entities-dai-container {
+    flex-grow: 1
+}
+
+.frameworks-drivers-container {
+    height: 90px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 39px;
 }

@@ -1,8 +1,8 @@
 .individual-button--container {
-    height: 48px;
+    height: 38px;
     width: 100%;
     border: none;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     background: none;
 }
 
@@ -42,6 +42,11 @@
     font-size: clamp(.25rem, .75vw, .7rem);
     pointer-events: none;
     display: flex;
+}
+
+.exercise--button-in-droppable {
+    height: 100%;
+    width: 100%;
 }
 
 .button--correct {

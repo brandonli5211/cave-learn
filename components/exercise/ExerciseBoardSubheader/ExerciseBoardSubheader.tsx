@@ -8,7 +8,7 @@ export default function ExerciseBoardSubheader(){
     <div className={styles['subheader--container']}>
         <div className={styles['subheader--text']}>
             <p className="text-eyebrow">Exercise   .   Test Yourself</p>
-            <p className="text-h1">Drag every component into its layer.</p>
+            <p className="text-h2">Drag every component into its layer.</p>
         </div>
     </div>
 )}

@@ -16,7 +16,7 @@
 }
 
 .sidebar--results-text {
-    width: 90%;
+    width: 95%;
     text-align: left;
     margin-top: 40px;
     display: flex;
@@ -78,8 +78,8 @@
 }
 
 .sidebar--incorrect-components {
-    margin-top: 20px;
-    width: 90%;
+    margin-top: 5px;
+    width: 95%;
     height: 400px;
     display: flex;
     flex-direction: row;
@@ -95,11 +95,10 @@
 }
 
 .retry-button--container {
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content: center;
     flex-grow: 1;
-    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -133,17 +132,17 @@
 }
 
 .pieces--container {
-    width: 90%;
+    width: 95%;
     text-align: left;
     padding-top: 110px;
 }
 
 .description--container {
-    width: 90%;
+    width: 95%;
 }
 
 .buttons--container {
-    width: 90%;
+    width: 95%;
     height: 400px;
     display: flex;
     flex-direction: row;
@@ -166,7 +165,7 @@
 
 .check-work-reset--container {
     display: flex;
-    width: 90%;
+    width: 95%;
     flex-grow: 1;
     flex-direction: row;
     align-items: center;
