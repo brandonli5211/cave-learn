@@ -41,6 +41,26 @@ export default function ManhattanArrow({ start, path, type, rotation }: Manhatta
     d+= `L ${x} ${y} `;
   }
 
+  let foreignX = x;
+  let foreignY = y;
+
+  if (rotation === 0) {
+    foreignX = x - 6; // Adjust for arrow size
+    foreignY = y - 9; // Adjust for arrow size
+  }
+  else if (rotation === 90) {
+    foreignX = x - 10.5; // Adjust for arrow size
+    foreignY = y - 7; // Adjust for arrow size
+  }
+  else if (rotation === 180) {
+    foreignX = x - 12; // Adjust for arrow size
+    foreignY = y - 9; // Adjust for arrow size
+  }
+  else if (rotation === 270) {
+    foreignX = x - 10.5; // Adjust for arrow size
+    foreignY = y - 12; // Adjust for arrow size
+  }
+
   console.log(d);
 
   return (
@@ -65,8 +85,8 @@ export default function ManhattanArrow({ start, path, type, rotation }: Manhatta
         fill="none"
       />
       <foreignObject
-        x={x - 10}
-        y={y - 10}
+        x={foreignX}
+        y={foreignY}
         width={20}
         height={20}
       >
