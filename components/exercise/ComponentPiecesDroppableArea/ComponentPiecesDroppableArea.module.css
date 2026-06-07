@@ -6,7 +6,7 @@
 }
 
 .controller-droppable {
-    margin-top: 21px;
+    margin-top: 110px;
     width: 156px;
     height: 50px;
 }
@@ -61,47 +61,26 @@
 }
 
 .data-access-interface-droppable {
-    margin-top: 150px;
+    margin-top: 148.5px;
     margin-left: 62px;
     height: 36px;
     width: 156px;
 }
 
 .view-droppable {
-    margin-left: 63px;
-    width: 152px;
-    height: 66px;
-    margin-bottom: 26px;
+    margin-left: 60px;
+    width: 157px;
+    height: 65px;
 }
 
 .data-access-droppable {
-    margin-left: 265px;
-    width: 144px;
-    height: 66px;
-    margin-bottom: 26px;
+    margin-left: 261px;
+    width: 146px;
+    height: 65px;
 }
 
 .database-droppable {
-    margin-left: 56px;
-    width: 144px;
-    height: 66px;
-    margin-bottom: 26px;
-}
-
-@media screen and (max-width: 1138px) {
-    .controller-droppable {
-        margin-top: 24px;
-    }
-
-    .view-droppable {
-        margin-bottom: 20px;
-    }
-
-    .data-access-droppable {
-        margin-bottom: 20px;
-    }
-
-    .database-droppable {
-        margin-bottom: 20px;
-    }
+    margin-left: 55px;
+    width: 145px;
+    height: 65px;
 }
