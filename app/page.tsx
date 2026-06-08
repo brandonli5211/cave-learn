@@ -35,8 +35,24 @@ export default function HomePage() {
       <main className="page-shell">
           <HeroSection />
           <section className={`${styles.cardGrid} content-area`}>
-              <StepCard />
-              <StepCard />
+              <StepCard
+                variant="learn"
+                illustrationSrc="/illustration-learn.svg"
+                illustrationAlt="Explore the diagram"
+                title="Explore the diagram"
+                description="Tap any component to learn what it does, what it depends on, and how it talks to the rest of the system."
+                ctaLabel="Start exploring"
+                ctaHref="/diagram"
+              />
+              <StepCard
+                variant="test"
+                illustrationSrc="/illustration-test.svg"
+                illustrationAlt="Fill in the diagram"
+                title="Fill in the diagram"
+                description="Drag the pieces into the right layer. Check your work, fix the red bits, and earn a full-green score."
+                ctaLabel="Try the exercise"
+                ctaHref="/exercise"
+              />
           </section>
       </main>
   )
