@@ -74,7 +74,7 @@ export const CA_COMPONENTS: CAComponent[] = [
     name: 'View',
     layer: 'frameworks-drivers',
     description:
-      'Displays information and reacts to user interaction.',
+      'Displays audio-visual information such as buttons, graphics, and sound effects. The user interacts directly with the View.',
     dependsOn: [
       { id: 'view-model', reason: 'Reads display data from the ViewModel. When the ViewModel updates, it alerts the View to re-render.' },
       { id: 'controller', reason: 'Calls the Controller when the user does something, depending on it to fulfil the request.' },
