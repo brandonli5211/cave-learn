@@ -40,7 +40,6 @@ export default function DependencyCard({ sourceId, targetId, reason, type }: Dep
   return (
     <div className={styles.card}>
       <div className={styles.arrowRow}>
-        <NodeChip id={sourceId} />
         <Arrow type={type} />
         <NodeChip id={targetId} />
       </div>

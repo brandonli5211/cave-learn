@@ -1,5 +1,5 @@
 .leftCol {
-  flex: 2;
+  flex: 1;
   padding-left: var(--space-6);
   padding-right: var(--space-6);
 }
@@ -18,9 +18,7 @@
 }
 
 .legend {
-  height: 100px;
-  background-image: url('/Legend.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  height: 60px;
+  width: auto;
+  margin-bottom: var(--space-4);
 }

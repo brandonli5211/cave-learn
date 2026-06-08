@@ -12,6 +12,7 @@ interface CADiagramProps {
 // Diagram canvas dimensions — must match the SVG viewBox
 const W = 894
 const H = 553
+const SCALE = 1.05
 
 // Center (x, y) for each node in the 894x553 coordinate space
 const POSITIONS: Record<string, { x: number; y: number }> = {
@@ -71,13 +72,28 @@ const ARROWS = [
 export default function CADiagram({ selectedId, onSelect }: CADiagramProps) {
   return (
     <div style={{ width: '100%', height: '100%', overflow: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ position: 'relative', width: W, height: H, flexShrink: 0 }}>
+      <div style={{ width: W * SCALE, height: H * SCALE, flexShrink: 0, overflow: 'hidden' }}>
+      <div style={{ position: 'relative', width: W, height: H, transform: `scale(${SCALE})`, transformOrigin: 'top left' }}>
         {/* SVG background */}
         <img
           src="/diagrambackground.svg"
           alt=""
           style={{ position: 'absolute', top: 0, left: 0, width: W, height: H, pointerEvents: 'none' }}
         />
+
+        {/* Layer labels */}
+        {[
+          { label: 'Interface Adapters',  x: 55,  y: 40,  color: '#236334' },
+          { label: 'Application Business Rules', x: 280, y: 40,  color: '#941B45' },
+          { label: 'Enterprise Business Rules',  x: 640, y: 40,  color: '#8B6A00' },
+          { label: 'Frameworks & Drivers',       x: 265,  y: 458, color: '#1F4E8A' },
+        ].map(({ label, x, y, color }) => (
+          <span key={label} style={{
+            position: 'absolute', left: x, top: y,
+            fontFamily: 'var(--font-sans)', fontSize: 15, fontWeight: 700,
+            color, pointerEvents: 'none',
+          }}>{label}</span>
+        ))}
 
         {/* Arrows */}
         {ARROWS.map((arrow, i) => (
@@ -105,6 +121,7 @@ export default function CADiagram({ selectedId, onSelect }: CADiagramProps) {
             </div>
           )
         })}
+      </div>
       </div>
     </div>
   )

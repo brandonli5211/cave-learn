@@ -18,15 +18,16 @@ export default function DiagramPage() {
       <div className={styles.leftCol}>
         <p className={`text-eyebrow ${styles.eyebrow}`}>DIAGRAM · COMPONENTS & LAYERS</p>
         <p className={`text-h1 ${styles.heading}`}>Click any component to learn what it does.</p>
-        <Paper elevation={4} sx={{ borderRadius: 'var(--radius-card)', overflow: 'auto' }}>
+        <Paper elevation={4} sx={{ borderRadius: 'var(--radius-card)', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '75vh' }}>
           <div className={styles.diagramWrap}>
             <CADiagram selectedId={selectedId} onSelect={setSelectedId} />
           </div>
-          <div className={styles.legend} />
+          <img src="/Legend.svg" alt="Diagram legend" className={styles.legend} />
         </Paper>
       </div>
+
       {/* Right: component sidebar */}
-      <Paper elevation={0} sx={{ flex: 1, height: 'calc(100vh - var(--navbar-height))', overflow: 'hidden', position: 'sticky', top: 'var(--navbar-height)' }}>
+      <Paper elevation={0} sx={{ width: 380, flexShrink: 0, height: 'calc(100vh - var(--navbar-height))', overflow: 'hidden', position: 'sticky', top: 'var(--navbar-height)' }}>
         <ComponentSidebar selectedId={selectedId} />
       </Paper>
   </main>

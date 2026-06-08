@@ -3,6 +3,9 @@
   flex-direction: column;
   gap: var(--space-3);
   padding-bottom: var(--space-4);
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .arrowRow {
@@ -14,7 +17,7 @@
 
 .chip {
   font-family: var(--font-mono);
-  font-size: 1rem; /* 18px */
+  font-size: 0.75rem; /* 18px */
   font-weight: 600;
   padding: 4px var(--space-3);
   border-radius: var(--radius-sm);
@@ -28,8 +31,11 @@
 
 .reason {
   font-family: var(--font-mono);
-  font-size: 1.055rem; /* 18px */
+  font-size: 1rem;
   font-weight: 500;
   color: var(--color-text-mute);
   line-height: var(--leading-normal);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
