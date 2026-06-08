@@ -1,36 +1,15 @@
-// app/exercise/page.tsx — Exercise page (route: /exercise)
+'use client'
+import ExerciseBoard from "@/components/exercise/ExerciseBoard"
+import { Box } from "@mui/material";
+// app/exercise/page.tsx  —  Exercise page  (route: /exercise)
 // Drag-and-drop lesson: place every CA component into its correct layer.
-
-import { ActivityCard } from "@/components/exercise/ActivityCard";
-import { TypeBadge } from "@/components/exercise/TypeBadge";
+// See the mockup in the project Figma / design images for the full spec.
 
 export default function ExercisePage() {
+  // Subtract height of header
   return <main className="page-shell">
-    <div
-      style={{ padding: "var(--space-8) var(--space-10)" }}
-      className = "content-area"
-    >
-      <h1 className="text-display">Test Yourself</h1>
-      <p 
-        style={{ maxWidth: "70%", marginBottom: "var(--space-6)" }}
-        className="text-body"
-      >
-        Use interactive activities to put your knowledge of clean architecture to the test. <br/>
-        Choose from different activity types to test what your really stuck on.
-      </p>
-      <section style={{display: "flex"}}>
-        <TypeBadge type="DRAG AND DROP" />
-        <TypeBadge type="MATCHING" />
-        <TypeBadge type="QUIZ" />
-        <TypeBadge type="MULTIPLE CHOICE" />
-      </section>
-    </div>
-    <section
-      className = "content-area"
-    >
-      <ActivityCard exercise="Fill in the diagram"/>
-      <ActivityCard exercise=""/>
-      <ActivityCard exercise=""/>
-    </section>
+    <Box sx={{ display: 'flex', flex: 1, overflow: 'hidden', height: 'calc(100vh - 64px)'}}>
+      <ExerciseBoard />
+    </Box>
   </main>
 }

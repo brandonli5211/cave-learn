@@ -10,7 +10,7 @@ const designs = {
         type: "DRAG AND DROP",
         title: "Fill in the diagram",
         content: "Test your knowledge of the diagram by recreating the diagram and checking your work.",
-        link: "/exercise/#",
+        link: "/exercise",
         graphic: "/drag_and_drop_icon.svg"
     }
 }
