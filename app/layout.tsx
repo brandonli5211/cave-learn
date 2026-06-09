@@ -34,11 +34,13 @@ const jetbrains = JetBrains_Mono({
   variable: '--font-jetbrains', // used by --font-mono in globals.css
 })
 
+const basePath = process.env.NODE_ENV === 'production' ? '/cave-learn' : ''
+
 export const metadata: Metadata = {
   title: 'CAVE Learn',
   description: 'Learn Clean Architecture by playing with it.',
   icons: {
-    icon: '/logo_dark.svg',
+    icon: [{ url: `${basePath}/logo_dark.svg`, type: 'image/svg+xml' }],
   },
 }
 
