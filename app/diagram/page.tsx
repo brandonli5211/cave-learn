@@ -8,6 +8,7 @@ import { useState } from 'react'
 import CADiagram from '@/components/diagram/CADiagram'
 import ComponentSidebar from '@/components/diagram/ComponentSidebar'
 import Paper from '@mui/material/Paper'
+import { asset } from '@/lib/asset'
 import styles from './page.module.css'
 
 export default function DiagramPage() {
@@ -22,7 +23,7 @@ export default function DiagramPage() {
           <div className={styles.diagramWrap}>
             <CADiagram selectedId={selectedId} onSelect={setSelectedId} />
           </div>
-          <img src="/Legend.svg" alt="Diagram legend" className={styles.legend} />
+          <img src={asset('/Legend.svg')} alt="Diagram legend" className={styles.legend} />
         </Paper>
       </div>
 
