@@ -37,6 +37,9 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'CAVE Learn',
   description: 'Learn Clean Architecture by playing with it.',
+  icons: {
+    icon: '/logo_dark.svg',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
