@@ -22,6 +22,12 @@
 .filledCard {
   background-color: #FFFFFF;
   padding: 25px 70px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cardLink:hover .filledCard {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-raised);
 }
 
 .cardFrame {
